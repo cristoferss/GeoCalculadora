@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Circulo">
+
+    <EditText
+        android:id="@+id/etArea"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextArea"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <EditText
+        android:id="@+id/etPerimetro"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextPerimetroLongitud"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <EditText
+        android:id="@+id/etDiagonal"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextDiagonal"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <Button
+        android:id="@+id/btnCalcular"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonCalcular" />
+
+    <TextView
+        android:id="@+id/textViewResultado"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TextViewResultado" />
+
+    <Button
+        android:id="@+id/btnVolver"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonVolver" />
+
+</LinearLayout>

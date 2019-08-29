@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/TextView_Calculadora_Geometrica" />
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbCuadrado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonCuadrado" />
+
+        <RadioButton
+            android:id="@+id/rbRectangulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonRectangulo" />
+
+        <RadioButton
+            android:id="@+id/rbCirculo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonCirculo" />
+
+        <RadioButton
+            android:id="@+id/rbRombo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonRombo" />
+
+        <RadioButton
+            android:id="@+id/rbTriangulos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonTriangulos" />
+        <RadioButton
+            android:id="@+id/rbSomos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/RadioButtonSomos" />
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btnSeleccion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ButtonIrAseleccion" />
+
+</LinearLayout>

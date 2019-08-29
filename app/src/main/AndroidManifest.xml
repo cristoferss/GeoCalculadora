@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.geocal">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".QuienesSomos"
+            android:label="@string/app_nameRombo"
+            ></activity>
+        <activity android:name=".Rombo"
+          android:label="@string/app_nameRombo"
+            />
+        <activity android:name=".Triangulos"
+            android:label="@string/app_nameTriangulos"
+            />
+        <activity android:name=".Circulo"
+            android:label="@string/app_nameCirculo"
+            />
+        <activity android:name=".Rectangulo"
+            android:label="@string/app_nameRectangulo"
+            />
+        <activity android:name=".Cuadrado"
+            android:label="@string/app_nameCuadrado"
+            />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
