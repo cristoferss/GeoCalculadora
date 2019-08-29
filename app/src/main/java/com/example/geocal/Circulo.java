@@ -40,12 +40,15 @@ public class Circulo extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                int area = Integer.parseInt(etArea.getText().toString());
-                int diagonal = Integer.parseInt(etDiagonal.getText().toString());
-                int perimetro = Integer.parseInt(etPerimetro.getText().toString());
-                int suma = (area+diagonal+perimetro);
-                String resu = String.valueOf(suma);
-                textViewResultado.setText(resu);
+                if(Validar()){
+                    Toast.makeText(Circulo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
+                    int area = Integer.parseInt(etArea.getText().toString());
+                    int diagonal = Integer.parseInt(etDiagonal.getText().toString());
+                    int perimetro = Integer.parseInt(etPerimetro.getText().toString());
+                    int suma = (area+diagonal+perimetro);
+                    String resu = String.valueOf(suma);
+                    textViewResultado.setText(resu);
+                }
 
 
             }
@@ -59,5 +62,29 @@ public class Circulo extends AppCompatActivity {
                 startActivity(btnVolver);
             }
         });
+    }
+
+    public boolean Validar(){
+        boolean retorno=true;
+        String area=etArea.getText().toString();
+        String perimetro=etPerimetro.getText().toString();
+        String diagonal=etDiagonal.getText().toString();
+        if(area.isEmpty()){
+
+            etArea.setError("Debe ingresar el Área");
+            retorno=false;
+        }
+        if(perimetro.isEmpty()){
+
+            etPerimetro.setError("Debe ingresar el Perimetro");
+            retorno=false;
+        }
+
+        if(diagonal.isEmpty()){
+
+            etDiagonal.setError("Debe ingresar la Diagonal");
+            retorno=false;
+        }
+        return retorno;
     }
 }
