@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity android:name=".QuienesSomos"
-            android:label="@string/app_nameRombo"
+            android:label="@string/app_nameSomos"
             ></activity>
         <activity android:name=".Rombo"
           android:label="@string/app_nameRombo"
