@@ -15,6 +15,7 @@
     <string name="TextView_CalcularTriangulos">Calcular Triangulos</string>
     <string name="TextView_CalcularCirculo">Calcular Circulo</string>
     <string name="TextViewResultado">Resultado</string>
+    <string name="TextViewMenu">Seleccione el tipo de cálculo</string>
     <string name="RadioButtonCuadrado">Cuadrado</string>
     <string name="RadioButtonRectangulo">Rectangulo</string>
     <string name="RadioButtonCirculo">Circulo</string>
@@ -32,4 +33,5 @@
     <string name="EditTextPerimetro">Perimetro</string>
     <string name="EditTextSemiPerimetro">SemiPerimetro</string>
     <string name="EditTextPerimetroLongitud">Perimetro (Longitud)</string>
+
 </resources>
