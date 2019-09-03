@@ -76,16 +76,11 @@
     </RadioGroup>
 
     <Button
-        android:id="@+id/btnCalcular"
+        android:id="@+id/btnEnviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonCalcular" />
+        android:text="Enviar" />
 
-    <TextView
-        android:id="@+id/textViewResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/TextViewResultado" />
 
     <Button
         android:id="@+id/btnVolver"
