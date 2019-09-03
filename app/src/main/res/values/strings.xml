@@ -5,6 +5,7 @@
     <string name="app_nameRectangulo">Rectangulo</string>
     <string name="app_nameRombo">Rombo</string>
     <string name="app_nameTriangulos">Triangulos</string>
+    <string name="app_nameResuTriangulos">Resultados Triangulos</string>
     <string name="app_nameSomos">Quienes Somos</string>
     <string name="TextView_Calculadora_Geometrica">Menu de selección de medidas</string>
     <string name="TextViewSelecccionTriangulos">Seleccione el tipo de medida</string>
@@ -14,6 +15,7 @@
     <string name="TextView_CalcularTriangulos">Calcular Triangulos</string>
     <string name="TextView_CalcularCirculo">Calcular Circulo</string>
     <string name="TextViewResultado">Resultado</string>
+    <string name="TextViewMenu">Seleccione el tipo de cálculo</string>
     <string name="RadioButtonCuadrado">Cuadrado</string>
     <string name="RadioButtonRectangulo">Rectangulo</string>
     <string name="RadioButtonCirculo">Circulo</string>
@@ -23,7 +25,7 @@
     <string name="RadioButtonEscaleno">Escaleno</string>
     <string name="RadioButtonRombo">Rombo</string>
     <string name="RadioButtonSomos">Quienes Somos</string>
-    <string name="ButtonIrAseleccion">Ir a la selección</string>
+    <string name="ButtonIrAseleccion">Ingresar Datos</string>
     <string name="ButtonVolver">Volver al menu de selección</string>
     <string name="ButtonCalcular">Calcular</string>
     <string name="EditTextArea">Area</string>
@@ -31,4 +33,5 @@
     <string name="EditTextPerimetro">Perimetro</string>
     <string name="EditTextSemiPerimetro">SemiPerimetro</string>
     <string name="EditTextPerimetroLongitud">Perimetro (Longitud)</string>
+
 </resources>

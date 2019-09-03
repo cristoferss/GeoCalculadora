@@ -12,6 +12,7 @@ import android.widget.Toast;
 
 public class Triangulos extends AppCompatActivity {
 
+    private Button btnEnviar;
     private Button btnVolver;
     private Button btnCalcular;
     private EditText etArea,etSemiperimetro,etPerimetro;
@@ -27,6 +28,8 @@ public class Triangulos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triangulos);
 
+
+        btnEnviar  = (Button)findViewById(R.id.btnEnviar);
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnCalcular  = (Button)findViewById(R.id.btnCalcular);
@@ -43,13 +46,26 @@ public class Triangulos extends AppCompatActivity {
         //Variable resultado
         textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
-        btnCalcular.setOnClickListener(new View.OnClickListener() {
+        btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
                 if(Validar()){
                     if (rbEquilatero.isChecked() == true){
+
+                        //Envio de variables a activity resultados triangulos
+                        //Usando el metodo intent
+
+                        Intent enviar = new Intent(getApplicationContext(), ResultadosTriangulos.class);
+                        enviar.putExtra("area",etArea.getText().toString());
+                        enviar.putExtra("perimetro",etPerimetro.getText().toString());
+                        enviar.putExtra("semiperimetro",etSemiperimetro.getText().toString());
+
+                        //Envio de paratametros a activity resultados
+                        startActivity(enviar);
+
+                    }else if (rbEscaleno.isChecked() == true){
 
                         Toast.makeText(Triangulos.this,"Datos ingresados correctamente",Toast.LENGTH_SHORT).show();
                         int area = Integer.parseInt(etArea.getText().toString());
@@ -59,19 +75,11 @@ public class Triangulos extends AppCompatActivity {
                         String resu = String.valueOf(suma);
                         textViewResultado.setText(resu);
 
-                    }else if (rbEscaleno.isChecked() == true){
-
-                        Toast.makeText(Triangulos.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
-                        int area = Integer.parseInt(etArea.getText().toString());
-                        int semiperimetro = Integer.parseInt(etSemiperimetro.getText().toString());
-                        int perimetro = Integer.parseInt(etPerimetro.getText().toString());
-                        int suma = (area+semiperimetro+perimetro);
-                        String resu = String.valueOf(suma);
-                        textViewResultado.setText(resu);
 
                     }if (rbIsosceles.isChecked() == true){
 
-                        Toast.makeText(Triangulos.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
+
+                        Toast.makeText(Triangulos.this,"Datos ingresados correctamente",Toast.LENGTH_SHORT).show();
                         int area = Integer.parseInt(etArea.getText().toString());
                         int semiperimetro = Integer.parseInt(etSemiperimetro.getText().toString());
                         int perimetro = Integer.parseInt(etPerimetro.getText().toString());
@@ -79,6 +87,8 @@ public class Triangulos extends AppCompatActivity {
                         String resu = String.valueOf(suma);
                         textViewResultado.setText(resu);
 
+                    }else{
+                        Toast.makeText(Triangulos.this,"Debe seleccionar un tipo de medida",Toast.LENGTH_SHORT).show();
                     }
                 }
 
@@ -94,6 +104,11 @@ public class Triangulos extends AppCompatActivity {
                 startActivity(btnVolver);
             }
         });
+
+
+
+
+
     }
     public boolean Validar(){
         boolean retorno=true;

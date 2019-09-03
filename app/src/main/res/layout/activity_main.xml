@@ -6,30 +6,43 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@drawable/geofigura"
     tools:context=".MainActivity">
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TextView_Calculadora_Geometrica" />
+        android:background="@color/colorAzul"
+        android:text="@string/TextViewMenu"
+        android:textColor="@color/colorAmarillo"
+        android:textSize="26sp" />
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        >
 
         <RadioButton
             android:id="@+id/rbCuadrado"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="@string/RadioButtonCuadrado" />
+            android:checked="false"
+            android:text="@string/RadioButtonCuadrado"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
+            android:visibility="visible" />
 
         <RadioButton
             android:id="@+id/rbRectangulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
             android:text="@string/RadioButtonRectangulo" />
 
         <RadioButton
@@ -37,6 +50,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
             android:text="@string/RadioButtonCirculo" />
 
         <RadioButton
@@ -44,6 +60,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
             android:text="@string/RadioButtonRombo" />
 
         <RadioButton
@@ -51,19 +70,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
             android:text="@string/RadioButtonTriangulos" />
         <RadioButton
             android:id="@+id/rbSomos"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="@color/colorAmarillo"
+            android:background="@color/colorAzul"
+            android:textSize="20sp"
             android:text="@string/RadioButtonSomos" />
     </RadioGroup>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <Button
         android:id="@+id/btnSeleccion"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonIrAseleccion" />
+        android:background="@color/colorVioleta"
+        android:text="@string/ButtonIrAseleccion"
+        android:textColor="@color/colorAmarillo" />
+
+</LinearLayout>
+
 
 </LinearLayout>
