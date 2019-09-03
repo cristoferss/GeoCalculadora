@@ -70,6 +70,8 @@ public class MainActivity extends AppCompatActivity {
                     Intent btnSiguiente = new Intent(getApplicationContext(), QuienesSomos.class);
                     startActivity(btnSiguiente);
 
+                }else if(Validar()){
+                    Toast.makeText(MainActivity.this, "Debe seleccionar un tipo de cálculo", Toast.LENGTH_SHORT).show();
                 }
 
 
@@ -79,5 +81,44 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+    public boolean Validar(){
+        boolean retorno=true;
+        String somos=rbSomos.getText().toString();
+        String cuadrado=rbCuadrado.getText().toString();
+        String circulo=rbCirculo.getText().toString();
+        String rectangulo=rbRectangulo.getText().toString();
+        String rombo=rbRombo.getText().toString();
+        String triangulos=rbTriangulos.getText().toString();
+
+
+        if(somos.isEmpty()){
+
+            rbSomos.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }else if(cuadrado.isEmpty()){
+
+            rbCuadrado.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }else if(circulo.isEmpty()){
+
+            rbCirculo.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }else if(rectangulo.isEmpty()){
+
+            rbRectangulo.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }else if(rombo.isEmpty()){
+
+            rbRombo.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }else if(triangulos.isEmpty()){
+
+            rbTriangulos.setError("Debe seleccionr un tipo de cálculo");
+            retorno=false;
+        }
+
+        return retorno;
     }
 }
