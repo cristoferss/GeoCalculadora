@@ -5,7 +5,7 @@
     <string name="app_nameRectangulo">Rectangulo</string>
     <string name="app_nameRombo">Rombo</string>
     <string name="app_nameTriangulos">Triangulos</string>
-    <string name="app_nameResuTriangulos">Resultados Triangulos</string>
+    <string name="app_nameResu">Resultados</string>
     <string name="app_nameSomos">Quienes Somos</string>
     <string name="TextView_Calculadora_Geometrica">Menu de selección de medidas</string>
     <string name="TextViewSelecccionTriangulos">Seleccione el tipo de medida</string>

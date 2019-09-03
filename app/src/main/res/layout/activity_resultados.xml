@@ -9,7 +9,7 @@
     android:paddingRight="16dp"
     android:background="@drawable/geofigura"
     android:orientation="vertical"
-    tools:context=".ResultadosTriangulos">
+    tools:context=".Resultados">
 
 
 

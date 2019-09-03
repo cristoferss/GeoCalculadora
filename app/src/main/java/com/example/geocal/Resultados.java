@@ -5,10 +5,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
 
-public class ResultadosTriangulos extends AppCompatActivity {
+public class Resultados extends AppCompatActivity {
 
     private Button btnVolver;
     private TextView textViewResultado;
@@ -16,7 +15,7 @@ public class ResultadosTriangulos extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_resultados_triangulos);
+        setContentView(R.layout.activity_resultados);
 
 
         //Botones
