@@ -5,6 +5,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:background="@drawable/geofigura"
     android:orientation="vertical"
     tools:context=".Rectangulo">
 
@@ -45,17 +48,22 @@
         android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorVioleta"
+        android:textColor="@color/colorAmarillo"
         android:text="@string/ButtonCalcular" />
 
     <TextView
         android:id="@+id/textViewResultado"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+
         android:text="@string/TextViewResultado" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/colorVioleta"
+        android:textColor="@color/colorAmarillo"
         android:text="@string/ButtonVolver" />
 </LinearLayout>

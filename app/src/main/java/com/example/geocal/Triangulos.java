@@ -57,7 +57,7 @@ public class Triangulos extends AppCompatActivity {
                         //Envio de variables a activity resultados triangulos
                         //Usando el metodo intent
 
-                        Intent enviar = new Intent(getApplicationContext(), ResultadosTriangulos.class);
+                        Intent enviar = new Intent(getApplicationContext(), Resultados.class);
                         enviar.putExtra("area",etArea.getText().toString());
                         enviar.putExtra("perimetro",etPerimetro.getText().toString());
                         enviar.putExtra("semiperimetro",etSemiperimetro.getText().toString());
