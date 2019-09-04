@@ -21,7 +21,7 @@ public class Rombo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rombo);
 
-        final String figura = "Circulo";
+        final String figura = "Rombo";
 
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);

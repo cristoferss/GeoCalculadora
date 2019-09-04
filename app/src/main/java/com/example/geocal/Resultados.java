@@ -69,6 +69,8 @@ public class Resultados extends AppCompatActivity {
                 textViewArea.setVisibility(View.VISIBLE);
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewDiametro.setVisibility(View.VISIBLE);
+                textViewDiagonal.setVisibility(View.GONE);
+                textViewSemiperimetro.setVisibility(View.GONE);
                 break;
             case "Triángulo equilatero":
                 textViewFigura.setText("Figura: " + figura);
@@ -78,6 +80,8 @@ public class Resultados extends AppCompatActivity {
                 textViewArea.setVisibility(View.VISIBLE);
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewSemiperimetro.setVisibility(View.VISIBLE);
+                textViewDiagonal.setVisibility(View.GONE);
+                textViewDiametro.setVisibility(View.GONE);
                 break;
             case "Triángulo isósceles":
                 textViewFigura.setText("Figura: " + figura);
@@ -87,6 +91,8 @@ public class Resultados extends AppCompatActivity {
                 textViewArea.setVisibility(View.VISIBLE);
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewSemiperimetro.setVisibility(View.VISIBLE);
+                textViewDiagonal.setVisibility(View.GONE);
+                textViewDiametro.setVisibility(View.GONE);
                 break;
             case "Triángulo escaleno":
                 textViewFigura.setText("Figura: " + figura);
@@ -96,6 +102,8 @@ public class Resultados extends AppCompatActivity {
                 textViewArea.setVisibility(View.VISIBLE);
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewSemiperimetro.setVisibility(View.VISIBLE);
+                textViewDiagonal.setVisibility(View.GONE);
+                textViewDiametro.setVisibility(View.GONE);
                 break;
             case "Rombo":
                 textViewFigura.setText("Figura: " + figura);

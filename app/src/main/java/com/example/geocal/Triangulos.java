@@ -59,7 +59,7 @@ public class Triangulos extends AppCompatActivity {
 
                         double area = ( Math.sqrt(3) / 4 ) * Math.pow(lado, 2);
                         int perimetro = 3 * lado;
-                        int semiperimetro = perimetro / 2;
+                        double semiperimetro = perimetro / 2;
 
                         String resuArea = String.valueOf(area);
                         String resuPerimetro = String.valueOf(perimetro);
@@ -83,7 +83,7 @@ public class Triangulos extends AppCompatActivity {
 
                         double area = ( ladoB * ( Math.sqrt( Math.pow(ladoA, 2) - ( Math.pow(ladoB, 2 ) / 4 ) ) ) ) / 2;
                         int perimetro = ( 2 * ladoA ) + ladoB;
-                        int semiperimetro = perimetro / 2;
+                        double semiperimetro = perimetro / 2;
 
                         String resuArea = String.valueOf(area);
                         String resuPerimetro = String.valueOf(perimetro);
@@ -107,7 +107,7 @@ public class Triangulos extends AppCompatActivity {
                         int ladoC = Integer.parseInt(etLadoC.getText().toString());
 
                         int perimetro = ladoA + ladoB + ladoC;
-                        int semiperimetro = perimetro / 2;
+                        double semiperimetro = perimetro / 2;
                         double area = Math.sqrt( semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC) );
 
                         String resuArea = String.valueOf(area);
