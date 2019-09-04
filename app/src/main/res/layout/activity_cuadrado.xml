@@ -11,36 +11,21 @@
     android:orientation="vertical"
     tools:context=".Cuadrado">
 
-    <EditText
-        android:id="@+id/etArea"
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/EditTextArea"
-        android:inputType="number"
-        android:text=""
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="4dp" />
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:text="Ingrese lado del cuadrado" />
 
     <EditText
-        android:id="@+id/etPerimetro"
+        android:id="@+id/etLadoA"
         android:layout_width="match_parent"
         android:layout_height="57dp"
+        android:layout_marginBottom="100px"
         android:ems="10"
-        android:hint="@string/EditTextPerimetro"
+        android:hint="@string/EditTextLadoA"
         android:inputType="number"
-        android:text=""
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="4dp" />
-
-    <EditText
-        android:id="@+id/etDiagonal"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/EditTextDiagonal"
-        android:inputType="number"
-        android:text=""
         tools:layout_editor_absoluteX="-4dp"
         tools:layout_editor_absoluteY="4dp" />
 
@@ -52,19 +37,13 @@
         android:textColor="@color/colorAmarillo"
         android:text="@string/ButtonCalcular" />
 
-    <TextView
-        android:id="@+id/textViewResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="@string/TextViewResultado" />
-
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
         android:background="@color/colorVioleta"
-        android:textColor="@color/colorAmarillo"
-        android:text="@string/ButtonVolver" />
+        android:text="@string/ButtonVolver"
+        android:textColor="@color/colorAmarillo" />
 
 </LinearLayout>

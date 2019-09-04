@@ -11,23 +11,31 @@
     android:orientation="vertical"
     tools:context=".Rombo">
 
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:text="Ingrese lado y altura del rombo" />
+
     <EditText
-        android:id="@+id/etArea"
+        android:id="@+id/etLadoA"
         android:layout_width="match_parent"
         android:layout_height="57dp"
         android:ems="10"
-        android:hint="@string/EditTextArea"
+        android:hint="@string/EditTextLadoA"
         android:inputType="number"
         android:text=""
         tools:layout_editor_absoluteX="-4dp"
         tools:layout_editor_absoluteY="4dp" />
 
     <EditText
-        android:id="@+id/etPerimetro"
+        android:id="@+id/etLadoB"
         android:layout_width="match_parent"
         android:layout_height="57dp"
+        android:layout_marginBottom="100px"
         android:ems="10"
-        android:hint="@string/EditTextPerimetro"
+        android:hint="@string/EditTextLadoB"
         android:inputType="number"
         android:text=""
         tools:layout_editor_absoluteX="-4dp"
@@ -37,16 +45,10 @@
         android:id="@+id/btnCalcular"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="50px"
         android:background="@color/colorVioleta"
-        android:textColor="@color/colorAmarillo"
-        android:text="@string/ButtonCalcular" />
-
-    <TextView
-        android:id="@+id/textViewResultado"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-
-        android:text="@string/TextViewResultado" />
+        android:text="@string/ButtonCalcular"
+        android:textColor="@color/colorAmarillo" />
 
     <Button
         android:id="@+id/btnVolver"

@@ -28,10 +28,13 @@
     <string name="ButtonIrAseleccion">Ingresar Datos</string>
     <string name="ButtonVolver">Volver al menu de selección</string>
     <string name="ButtonCalcular">Calcular</string>
-    <string name="EditTextArea">Area</string>
+    <string name="EditTextLadoA">Valor</string>
+    <string name="EditTextLadoB">Valor</string>
+    <string name="EditTextLadoC">Valor</string>
     <string name="EditTextDiagonal">Diagonal</string>
     <string name="EditTextPerimetro">Perimetro</string>
     <string name="EditTextSemiPerimetro">SemiPerimetro</string>
     <string name="EditTextPerimetroLongitud">Perimetro (Longitud)</string>
+    <string name="EditTextArea">Lado cm</string>
 
 </resources>

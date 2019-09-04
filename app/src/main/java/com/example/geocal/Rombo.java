@@ -13,39 +13,53 @@ public class Rombo extends AppCompatActivity {
 
     private Button btnVolver;
     private Button btnCalcular;
-    private EditText etArea,etPerimetro;
+    private EditText etLadoA, etLadoB;
     private TextView textViewResultado;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rombo);
 
+        final String figura = "Circulo";
+
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
-        etArea = (EditText)findViewById(R.id.etArea);
-        etPerimetro = (EditText)findViewById(R.id.etPerimetro);
+        etLadoA = (EditText)findViewById(R.id.etLadoA);
+        etLadoB = (EditText)findViewById(R.id.etLadoB);
 
         //Variable resultado
-        textViewResultado = (TextView)findViewById(R.id.textViewResultado);
-
+        //textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(Validar()){
+                if(validar()){
+
                     Toast.makeText(Rombo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
-                    int area = Integer.parseInt(etArea.getText().toString());
-                    int perimetro = Integer.parseInt(etPerimetro.getText().toString());
-                    int suma = (area+perimetro);
-                    String resu = String.valueOf(suma);
-                    textViewResultado.setText(resu);
+
+                    int lado = Integer.parseInt(etLadoA.getText().toString());
+                    int altura =  Integer.parseInt(etLadoB.getText().toString());
+
+                    int area = lado * altura;
+                    int perimetro = 4 * lado;
+
+                    String resuArea = String.valueOf(area);
+                    String resuPerimetro = String.valueOf(perimetro);
+
+                    Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                    enviar.putExtra("figura", figura);
+                    enviar.putExtra("area",resuArea);
+                    enviar.putExtra("perimetro", resuPerimetro);
+
+                    //Envio de paratametros a activity resultados
+                    startActivity(enviar);
+
                 }
 
 
@@ -62,20 +76,20 @@ public class Rombo extends AppCompatActivity {
         });
     }
 
-    public boolean Validar(){
+    public boolean validar(){
         boolean retorno=true;
-        String area=etArea.getText().toString();
-        String perimetro=etPerimetro.getText().toString();
 
-        if(area.isEmpty()){
+        String ladoA = etLadoA.getText().toString();
+        String ladoB = etLadoB.getText().toString();
 
-            etArea.setError("Debe ingresar el Área");
-            retorno=false;
+        if (ladoA.isEmpty()) {
+            etLadoA.setError("Debe ingresar el lado");
+            retorno = false;
         }
-        if(perimetro.isEmpty()){
 
-            etPerimetro.setError("Debe ingresar el Perimetro");
-            retorno=false;
+        if (ladoB.isEmpty()) {
+            etLadoB.setError("Debe ingresar la altura");
+            retorno = false;
         }
 
         return retorno;

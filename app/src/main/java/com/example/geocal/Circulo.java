@@ -13,7 +13,7 @@ public class Circulo extends AppCompatActivity {
 
     private Button btnVolver;
     private Button btnCalcular;
-    private EditText etArea,etPerimetro,etDiagonal;
+    private EditText etLadoA;
     private TextView textViewResultado;
 
     @Override
@@ -21,35 +21,44 @@ public class Circulo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circulo);
 
+        final String figura = "Circulo";
+
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
-        etArea = (EditText)findViewById(R.id.etArea);
-        etDiagonal = (EditText)findViewById(R.id.etDiagonal);
-        etPerimetro = (EditText)findViewById(R.id.etPerimetro);
-
-        //Variable resultado
-        textViewResultado = (TextView)findViewById(R.id.textViewResultado);
-
+        etLadoA = (EditText)findViewById(R.id.etLadoA);
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
+                if(validar()){
 
-                if(Validar()){
                     Toast.makeText(Circulo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
-                    int area = Integer.parseInt(etArea.getText().toString());
-                    int diagonal = Integer.parseInt(etDiagonal.getText().toString());
-                    int perimetro = Integer.parseInt(etPerimetro.getText().toString());
-                    int suma = (area+diagonal+perimetro);
-                    String resu = String.valueOf(suma);
-                    textViewResultado.setText(resu);
-                }
 
+                    int radio = Integer.parseInt(etLadoA.getText().toString());
+
+                    double area = Math.PI * Math.pow(radio, 2);
+                    double perimetro = 2 * Math.PI * radio;
+                    double diametro = 2 * radio;
+
+                    String resuArea = String.valueOf(area);
+                    String resuPerimetro = String.valueOf(perimetro);
+                    String resuDiametro = String.valueOf(diametro);
+
+                    Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                    enviar.putExtra("figura", figura);
+                    enviar.putExtra("area",resuArea);
+                    enviar.putExtra("perimetro", resuPerimetro);
+                    enviar.putExtra("diametro", resuDiametro);
+
+                    //Envio de paratametros a activity resultados
+                    startActivity(enviar);
+
+                }
 
             }
         });
@@ -64,27 +73,16 @@ public class Circulo extends AppCompatActivity {
         });
     }
 
-    public boolean Validar(){
+    public boolean validar(){
         boolean retorno=true;
-        String area=etArea.getText().toString();
-        String perimetro=etPerimetro.getText().toString();
-        String diagonal=etDiagonal.getText().toString();
-        if(area.isEmpty()){
 
-            etArea.setError("Debe ingresar el Área");
-            retorno=false;
-        }
-        if(perimetro.isEmpty()){
+        String ladoA = etLadoA.getText().toString();
 
-            etPerimetro.setError("Debe ingresar el Perimetro");
-            retorno=false;
+        if (ladoA.isEmpty()) {
+            etLadoA.setError("Debe ingresar el radio");
+            retorno = false;
         }
 
-        if(diagonal.isEmpty()){
-
-            etDiagonal.setError("Debe ingresar la Diagonal");
-            retorno=false;
-        }
         return retorno;
     }
 }

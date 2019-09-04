@@ -13,46 +13,57 @@ public class Rectangulo extends AppCompatActivity {
 
     private Button btnVolver;
     private Button btnCalcular;
-    private EditText etArea,etPerimetro,etDiagonal;
-    private TextView textViewResultado;
-
-
+    private EditText etLadoA, etLadoB;
+    //private TextView textViewResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rectangulo);
 
-
+        final String figura = "Rectangulo";
 
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
-        etArea = (EditText)findViewById(R.id.etArea);
-        etDiagonal = (EditText)findViewById(R.id.etDiagonal);
-        etPerimetro = (EditText)findViewById(R.id.etPerimetro);
+        etLadoA = (EditText)findViewById(R.id.etLadoA);
+        //etDiagonal = (EditText)findViewById(R.id.etDiagonal);
+        etLadoB = (EditText)findViewById(R.id.etLadoB);
 
         //Variable resultado
-        textViewResultado = (TextView)findViewById(R.id.textViewResultado);
-
+        //textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(Validar()){
-                    Toast.makeText(Rectangulo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
-                    int area = Integer.parseInt(etArea.getText().toString());
-                    int diagonal = Integer.parseInt(etDiagonal.getText().toString());
-                    int perimetro = Integer.parseInt(etPerimetro.getText().toString());
-                    int suma = (area+diagonal+perimetro);
-                    String resu = String.valueOf(suma);
-                    textViewResultado.setText(resu);
-                }
+                if (validar()) {
 
+                    Toast.makeText(Rectangulo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
+
+                    int ladoA = Integer.parseInt(etLadoA.getText().toString());
+                    int ladoB = Integer.parseInt(etLadoB.getText().toString());
+
+                    int area = ladoA * ladoB;
+                    int perimetro = 2 * (ladoA * ladoB);
+                    double diagonal = Math.sqrt( Math.pow(ladoA, 2) +  Math.pow(ladoB, 2) );
+
+                    String resuArea = String.valueOf(area);
+                    String resuPerimetro = String.valueOf(perimetro);
+                    String resuDiagonal = String.valueOf(diagonal);
+
+                    Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                    enviar.putExtra("figura", figura);
+                    enviar.putExtra("area",resuArea);
+                    enviar.putExtra("perimetro", resuPerimetro);
+                    enviar.putExtra("diagonal", resuDiagonal);
+
+                    //Envio de paratametros a activity resultados
+                    startActivity(enviar);
+                }
 
             }
         });
@@ -60,34 +71,29 @@ public class Rectangulo extends AppCompatActivity {
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 Intent btnVolver = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(btnVolver);
             }
         });
     }
 
-    public boolean Validar(){
-        boolean retorno=true;
-        String area=etArea.getText().toString();
-        String perimetro=etPerimetro.getText().toString();
-        String diagonal=etDiagonal.getText().toString();
-        if(area.isEmpty()){
+    public boolean validar(){
 
-            etArea.setError("Debe ingresar el Área");
-            retorno=false;
-        }
-        if(perimetro.isEmpty()){
+        boolean retorno = true;
 
-            etPerimetro.setError("Debe ingresar el Perimetro");
-            retorno=false;
+        String ladoA = etLadoA.getText().toString();
+        String ladoB = etLadoB.getText().toString();
+
+        if (ladoA.isEmpty()) {
+            etLadoA.setError("Debe ingresar el lado");
+            retorno = false;
         }
 
-        if(diagonal.isEmpty()){
-
-            etDiagonal.setError("Debe ingresar la Diagonal");
-            retorno=false;
+        if (ladoB.isEmpty()) {
+            etLadoA.setError("Debe ingresar el lado");
+            retorno = false;
         }
+
         return retorno;
     }
 }

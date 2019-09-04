@@ -12,21 +12,61 @@
     tools:context=".Resultados">
 
 
-
-
     <TextView
-        android:id="@+id/textViewResultado"
+        android:id="@+id/textViewFigura"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Figura: " />
 
-        android:text="@string/TextViewResultado" />
+    <TextView
+        android:id="@+id/textViewArea"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Área: "
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewPerimetro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Perímetro:"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewDiagonal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="@string/EditTextDiagonal"
+        android:visibility="invisible"
+        tools:visibility="visible" />
+
+    <TextView
+        android:id="@+id/textViewSemiperimetro"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Semiperímetro"
+        android:visibility="invisible"
+        tools:visibility="visible" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
         android:background="@color/colorVioleta"
-        android:textColor="@color/colorAmarillo"
-        android:text="@string/ButtonVolver" />
+        android:text="@string/ButtonVolver"
+        android:textColor="@color/colorAmarillo" />
 
 </LinearLayout>

@@ -11,48 +11,17 @@
     android:background="@drawable/geofigura"
     tools:context=".Triangulos">
 
-    <EditText
-        android:id="@+id/etArea"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/EditTextArea"
-        android:inputType="number"
-        android:text=""
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="4dp" />
-
-    <EditText
-        android:id="@+id/etPerimetro"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/EditTextPerimetro"
-        android:inputType="number"
-        android:text=""
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="4dp" />
-
-    <EditText
-        android:id="@+id/etSemiperimetro"
-        android:layout_width="match_parent"
-        android:layout_height="57dp"
-        android:ems="10"
-        android:hint="@string/EditTextSemiPerimetro"
-        android:inputType="number"
-        android:text=""
-        tools:layout_editor_absoluteX="-4dp"
-        tools:layout_editor_absoluteY="4dp" />
-
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textView6"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/TextViewSelecccionTriangulos" />
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Seleccione el tipo de triángulo" />
 
     <RadioGroup
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content">
 
         <RadioButton
             android:id="@+id/rbEquilatero"
@@ -78,13 +47,56 @@
 
     </RadioGroup>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50px"
+        android:layout_marginBottom="50px"
+        android:text="Ingrese valores según corresponda" />
+
+    <EditText
+        android:id="@+id/etLadoA"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextLadoA"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <EditText
+        android:id="@+id/etLadoB"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextLadoB"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
+    <EditText
+        android:id="@+id/etLadoC"
+        android:layout_width="match_parent"
+        android:layout_height="57dp"
+        android:ems="10"
+        android:hint="@string/EditTextLadoC"
+        android:inputType="number"
+        android:text=""
+        tools:layout_editor_absoluteX="-4dp"
+        tools:layout_editor_absoluteY="4dp" />
+
     <Button
         android:id="@+id/btnEnviar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="100px"
+        android:layout_marginBottom="50px"
         android:background="@color/colorVioleta"
-        android:textColor="@color/colorAmarillo"
-        android:text="Enviar" />
+        android:text="Enviar"
+        android:textColor="@color/colorAmarillo" />
 
 
     <Button
