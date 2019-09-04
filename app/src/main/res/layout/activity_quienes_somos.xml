@@ -19,24 +19,34 @@
         android:layout_marginTop="100px"
         android:layout_marginBottom="50px"
         android:autoText="false"
-        android:text="Grupo: Ariel Lizana. Yirman Sereño." />
+        android:text="Grupo: Ariel Lizana. Yirman Sereño."
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Desarrollo de aplicación Android Studio. Mockups Balsamiq." />
+        android:layout_marginBottom="50px"
+        android:text="Desarrollo de aplicación Android Studio. Mockups Balsamiq."
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/textView9"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Desarrollo de aplicaciones moviles II" />
+        android:layout_marginBottom="50px"
+        android:text="Desarrollo de aplicaciones moviles II"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnVolver"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/ButtonVolver" />
+        android:background="@color/colorVioleta"
+        android:text="@string/ButtonVolver"
+        android:textColor="@color/colorAmarillo" />
 
 </LinearLayout>

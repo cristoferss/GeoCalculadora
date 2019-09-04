@@ -29,7 +29,7 @@ public class Triangulos extends AppCompatActivity {
         btnEnviar  = (Button)findViewById(R.id.btnEnviar);
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
         etLadoA = (EditText)findViewById(R.id.etLadoA);

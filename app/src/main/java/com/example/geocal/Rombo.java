@@ -26,7 +26,7 @@ public class Rombo extends AppCompatActivity {
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
         etLadoA = (EditText)findViewById(R.id.etLadoA);

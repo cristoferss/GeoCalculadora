@@ -52,7 +52,7 @@ public class Resultados extends AppCompatActivity {
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewDiagonal.setVisibility(View.VISIBLE);
                 break;
-            case "Ractángulo":
+            case "Rectángulo":
                 textViewFigura.setText("Figura: " + figura);
                 textViewArea.setText("Área: " + area);
                 textViewPerimetro.setText("Perímetro: " + perimetro);

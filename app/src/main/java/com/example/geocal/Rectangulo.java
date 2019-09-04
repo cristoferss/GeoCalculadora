@@ -14,7 +14,6 @@ public class Rectangulo extends AppCompatActivity {
     private Button btnVolver;
     private Button btnCalcular;
     private EditText etLadoA, etLadoB;
-    //private TextView textViewResultado;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,15 +25,12 @@ public class Rectangulo extends AppCompatActivity {
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        //btnCalcular  = (Button)findViewById(R.id.btnCalcular);
+        btnCalcular  = (Button)findViewById(R.id.btnCalcular);
         //Variables de numeros para el calculo
 
         etLadoA = (EditText)findViewById(R.id.etLadoA);
-        //etDiagonal = (EditText)findViewById(R.id.etDiagonal);
         etLadoB = (EditText)findViewById(R.id.etLadoB);
 
-        //Variable resultado
-        //textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
