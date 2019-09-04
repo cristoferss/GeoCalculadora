@@ -16,7 +16,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50px"
-        android:text="Ingrese lados del cuadrado" />
+        android:text="Ingrese lados del rectángulo" />
 
     <EditText
         android:id="@+id/etLadoA"

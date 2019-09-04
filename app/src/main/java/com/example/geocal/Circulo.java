@@ -21,7 +21,7 @@ public class Circulo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_circulo);
 
-        final String figura = "Circulo";
+        final String figura = "Círculo";
 
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);

@@ -14,6 +14,8 @@ public class Resultados extends AppCompatActivity {
     private TextView textViewArea;
     private TextView textViewPerimetro;
     private TextView textViewDiagonal;
+    private TextView textViewSemiperimetro;
+    private TextView textViewDiametro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +30,8 @@ public class Resultados extends AppCompatActivity {
         textViewArea = (TextView)findViewById(R.id.textViewArea);
         textViewPerimetro = (TextView) findViewById(R.id.textViewPerimetro);
         textViewDiagonal = (TextView) findViewById(R.id.textViewDiagonal);
+        textViewDiametro = (TextView) findViewById(R.id.textViewDiametro);
+        textViewSemiperimetro = (TextView) findViewById(R.id.textViewSemiperimetro);
 
         //Variable recibidas desde activity triangulos
         //Enviadas desde el metodo intent
@@ -35,8 +39,8 @@ public class Resultados extends AppCompatActivity {
         String area = getIntent().getStringExtra("area");
         String perimetro = getIntent().getStringExtra("perimetro");
         String diagonal = getIntent().getStringExtra("diagonal");
-        //String dato2 = getIntent().getStringExtra("perimetro");
-        //String dato3 = getIntent().getStringExtra("semiperimetro");
+        String diametro = getIntent().getStringExtra("diametro");
+        String semiperimetro = getIntent().getStringExtra("semiperimetro");
 
         switch (figura) {
             case "Cuadrado":
@@ -47,6 +51,58 @@ public class Resultados extends AppCompatActivity {
                 textViewArea.setVisibility(View.VISIBLE);
                 textViewPerimetro.setVisibility(View.VISIBLE);
                 textViewDiagonal.setVisibility(View.VISIBLE);
+                break;
+            case "Ractángulo":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewDiagonal.setText("Diagonal: " + diagonal);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
+                textViewDiagonal.setVisibility(View.VISIBLE);
+                break;
+            case "Círculo":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewDiametro.setText("Diametro: " + diametro);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
+                textViewDiametro.setVisibility(View.VISIBLE);
+                break;
+            case "Triángulo equilatero":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewSemiperimetro.setText("Semiperimetro: " + semiperimetro);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
+                textViewSemiperimetro.setVisibility(View.VISIBLE);
+                break;
+            case "Triángulo isósceles":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewSemiperimetro.setText("Semiperimetro: " + semiperimetro);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
+                textViewSemiperimetro.setVisibility(View.VISIBLE);
+                break;
+            case "Triángulo escaleno":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewSemiperimetro.setText("Semiperimetro: " + semiperimetro);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
+                textViewSemiperimetro.setVisibility(View.VISIBLE);
+                break;
+            case "Rombo":
+                textViewFigura.setText("Figura: " + figura);
+                textViewArea.setText("Área: " + area);
+                textViewPerimetro.setText("Perímetro: " + perimetro);
+                textViewArea.setVisibility(View.VISIBLE);
+                textViewPerimetro.setVisibility(View.VISIBLE);
                 break;
         }
 

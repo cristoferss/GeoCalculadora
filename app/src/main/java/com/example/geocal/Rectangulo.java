@@ -21,7 +21,7 @@ public class Rectangulo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rectangulo);
 
-        final String figura = "Rectangulo";
+        final String figura = "Rectángulo";
 
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);

@@ -26,8 +26,6 @@ public class Triangulos extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_triangulos);
 
-        final String figura = "Circulo";
-
         btnEnviar  = (Button)findViewById(R.id.btnEnviar);
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
@@ -55,6 +53,8 @@ public class Triangulos extends AppCompatActivity {
 
                     if (rbEquilatero.isChecked() == true){
 
+                        String figura = "Triángulo equilatero";
+
                         int lado = Integer.parseInt(etLadoA.getText().toString());
 
                         double area = ( Math.sqrt(3) / 4 ) * Math.pow(lado, 2);
@@ -74,13 +74,15 @@ public class Triangulos extends AppCompatActivity {
                         //Envio de paratametros a activity resultados
                         startActivity(enviar);
 
-                    }else if (rbEscaleno.isChecked() == true){
+                    }else if (rbIsosceles.isChecked() == true){
+
+                        String figura = "Triángulo isósceles";
 
                         int ladoA = Integer.parseInt(etLadoA.getText().toString());
                         int ladoB = Integer.parseInt(etLadoB.getText().toString());
 
-                        double area = ( Math.sqrt(3) / 4 ) * Math.pow(lado, 2);
-                        int perimetro = 3 * lado;
+                        double area = ( ladoB * ( Math.sqrt( Math.pow(ladoA, 2) - ( Math.pow(ladoB, 2 ) / 4 ) ) ) ) / 2;
+                        int perimetro = ( 2 * ladoA ) + ladoB;
                         int semiperimetro = perimetro / 2;
 
                         String resuArea = String.valueOf(area);
@@ -96,8 +98,30 @@ public class Triangulos extends AppCompatActivity {
                         //Envio de paratametros a activity resultados
                         startActivity(enviar);
 
-                    }if (rbIsosceles.isChecked() == true){
+                    }if (rbEscaleno.isChecked() == true) {
 
+                        String figura = "Triángulo escaleno";
+
+                        int ladoA = Integer.parseInt(etLadoA.getText().toString());
+                        int ladoB = Integer.parseInt(etLadoB.getText().toString());
+                        int ladoC = Integer.parseInt(etLadoC.getText().toString());
+
+                        int perimetro = ladoA + ladoB + ladoC;
+                        int semiperimetro = perimetro / 2;
+                        double area = Math.sqrt( semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC) );
+
+                        String resuArea = String.valueOf(area);
+                        String resuPerimetro = String.valueOf(perimetro);
+                        String resuSemiperimetro = String.valueOf(semiperimetro);
+
+                        Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                        enviar.putExtra("figura", figura);
+                        enviar.putExtra("area",resuArea);
+                        enviar.putExtra("perimetro", resuPerimetro);
+                        enviar.putExtra("semiperimetro", resuSemiperimetro);
+
+                        //Envio de paratametros a activity resultados
+                        startActivity(enviar);
 
                     }else{
                         Toast.makeText(Triangulos.this,"Debe seleccionar un tipo de rectángulo",Toast.LENGTH_SHORT).show();
