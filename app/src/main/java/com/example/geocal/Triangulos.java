@@ -20,6 +20,7 @@ public class Triangulos extends AppCompatActivity {
     private RadioButton rbEquilatero;
     private RadioButton rbIsosceles;
     private RadioButton rbEscaleno;
+    private Toast toastTipoTriangulo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,94 +44,103 @@ public class Triangulos extends AppCompatActivity {
         //Variable resultado
         //textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
+        toastTipoTriangulo = Toast.makeText(Triangulos.this,"Debe seleccionar un tipo de rectángulo",Toast.LENGTH_LONG);
+
         btnEnviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(validar()){
+                if (tipoTriangulo()) {
 
-                    Toast.makeText(Triangulos.this,"Datos ingresados correctamente",Toast.LENGTH_SHORT).show();
+                    if (validar()) {
 
-                    if (rbEquilatero.isChecked() == true){
+                        String resuArea = "";
+                        String resuPerimetro = "";
+                        String resuSemiperimetro = "";
 
-                        String figura = "Triángulo equilatero";
+                        if (rbEquilatero.isChecked()) {
 
-                        int lado = Integer.parseInt(etLadoA.getText().toString());
+                            String figura = "Triángulo equilatero";
 
-                        double area = ( Math.sqrt(3) / 4 ) * Math.pow(lado, 2);
-                        int perimetro = 3 * lado;
-                        double semiperimetro = perimetro / 2;
+                            int lado = Integer.parseInt(etLadoA.getText().toString());
 
-                        String resuArea = String.valueOf(area);
-                        String resuPerimetro = String.valueOf(perimetro);
-                        String resuSemiperimetro = String.valueOf(semiperimetro);
+                            double area = (Math.sqrt(3) / 4) * Math.pow(lado, 2);
+                            int perimetro = 3 * lado;
+                            double semiperimetro = perimetro / 2;
 
-                        Intent enviar = new Intent(getApplicationContext(), Resultados.class);
-                        enviar.putExtra("figura", figura);
-                        enviar.putExtra("area",resuArea);
-                        enviar.putExtra("perimetro", resuPerimetro);
-                        enviar.putExtra("semiperimetro", resuSemiperimetro);
+                            resuArea = String.valueOf(area);
+                            resuPerimetro = String.valueOf(perimetro);
+                            resuSemiperimetro = String.valueOf(semiperimetro);
 
-                        //Envio de paratametros a activity resultados
-                        startActivity(enviar);
+                            Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                            enviar.putExtra("figura", figura);
+                            enviar.putExtra("area", resuArea);
+                            enviar.putExtra("perimetro", resuPerimetro);
+                            enviar.putExtra("semiperimetro", resuSemiperimetro);
 
-                    }else if (rbIsosceles.isChecked() == true){
+                            //Envio de paratametros a activity resultados
+                            Toast.makeText(Triangulos.this, "Datos ingresados correctamente", Toast.LENGTH_LONG).show();
+                            startActivity(enviar);
 
-                        String figura = "Triángulo isósceles";
+                        } else if (rbIsosceles.isChecked()) {
 
-                        int ladoA = Integer.parseInt(etLadoA.getText().toString());
-                        int ladoB = Integer.parseInt(etLadoB.getText().toString());
+                            String figura = "Triángulo isósceles";
 
-                        double area = ( ladoB * ( Math.sqrt( Math.pow(ladoA, 2) - ( Math.pow(ladoB, 2 ) / 4 ) ) ) ) / 2;
-                        int perimetro = ( 2 * ladoA ) + ladoB;
-                        double semiperimetro = perimetro / 2;
+                            int ladoA = Integer.parseInt(etLadoA.getText().toString());
+                            int ladoB = Integer.parseInt(etLadoB.getText().toString());
 
-                        String resuArea = String.valueOf(area);
-                        String resuPerimetro = String.valueOf(perimetro);
-                        String resuSemiperimetro = String.valueOf(semiperimetro);
+                            double area = (ladoB * (Math.sqrt(Math.pow(ladoA, 2) - (Math.pow(ladoB, 2) / 4)))) / 2;
+                            int perimetro = (2 * ladoA) + ladoB;
+                            double semiperimetro = perimetro / 2;
 
-                        Intent enviar = new Intent(getApplicationContext(), Resultados.class);
-                        enviar.putExtra("figura", figura);
-                        enviar.putExtra("area",resuArea);
-                        enviar.putExtra("perimetro", resuPerimetro);
-                        enviar.putExtra("semiperimetro", resuSemiperimetro);
+                            resuArea = String.valueOf(area);
+                            resuPerimetro = String.valueOf(perimetro);
+                            resuSemiperimetro = String.valueOf(semiperimetro);
 
-                        //Envio de paratametros a activity resultados
-                        startActivity(enviar);
+                            Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                            enviar.putExtra("figura", figura);
+                            enviar.putExtra("area", resuArea);
+                            enviar.putExtra("perimetro", resuPerimetro);
+                            enviar.putExtra("semiperimetro", resuSemiperimetro);
 
-                    }if (rbEscaleno.isChecked() == true) {
+                            //Envio de paratametros a activity resultados
+                            Toast.makeText(Triangulos.this, "Datos ingresados correctamente", Toast.LENGTH_LONG).show();
+                            startActivity(enviar);
 
-                        String figura = "Triángulo escaleno";
+                        }
+                        if (rbEscaleno.isChecked() == true) {
 
-                        int ladoA = Integer.parseInt(etLadoA.getText().toString());
-                        int ladoB = Integer.parseInt(etLadoB.getText().toString());
-                        int ladoC = Integer.parseInt(etLadoC.getText().toString());
+                            String figura = "Triángulo escaleno";
 
-                        int perimetro = ladoA + ladoB + ladoC;
-                        double semiperimetro = perimetro / 2;
-                        double area = Math.sqrt( semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC) );
+                            int ladoA = Integer.parseInt(etLadoA.getText().toString());
+                            int ladoB = Integer.parseInt(etLadoB.getText().toString());
+                            int ladoC = Integer.parseInt(etLadoC.getText().toString());
 
-                        String resuArea = String.valueOf(area);
-                        String resuPerimetro = String.valueOf(perimetro);
-                        String resuSemiperimetro = String.valueOf(semiperimetro);
+                            int perimetro = ladoA + ladoB + ladoC;
+                            double semiperimetro = perimetro / 2;
+                            double area = Math.sqrt(semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC));
 
-                        Intent enviar = new Intent(getApplicationContext(), Resultados.class);
-                        enviar.putExtra("figura", figura);
-                        enviar.putExtra("area",resuArea);
-                        enviar.putExtra("perimetro", resuPerimetro);
-                        enviar.putExtra("semiperimetro", resuSemiperimetro);
+                            resuArea = String.valueOf(area);
+                            resuPerimetro = String.valueOf(perimetro);
+                            resuSemiperimetro = String.valueOf(semiperimetro);
 
-                        //Envio de paratametros a activity resultados
-                        startActivity(enviar);
+                            Intent enviar = new Intent(getApplicationContext(), Resultados.class);
+                            enviar.putExtra("figura", figura);
+                            enviar.putExtra("area", resuArea);
+                            enviar.putExtra("perimetro", resuPerimetro);
+                            enviar.putExtra("semiperimetro", resuSemiperimetro);
 
-                    }else{
-                        Toast.makeText(Triangulos.this,"Debe seleccionar un tipo de rectángulo",Toast.LENGTH_SHORT).show();
+                            //Envio de paratametros a activity resultados
+                            Toast.makeText(Triangulos.this, "Datos ingresados correctamente", Toast.LENGTH_LONG).show();
+                            //Toast.makeText(Triangulos.this, resuArea, Toast.LENGTH_LONG).show();
+                            startActivity(enviar);
+
+                        }
                     }
                 }
-
             }
-        });
 
+        });
 
         btnVolver.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -142,8 +152,32 @@ public class Triangulos extends AppCompatActivity {
         });
 
     }
+
+    public boolean tipoTriangulo() {
+
+        if (rbEquilatero.isChecked()) {
+            return true;
+        } else if (rbIsosceles.isChecked()) {
+            return true;
+        } else if (rbEscaleno.isChecked()) {
+            return true;
+        } else {
+            toastTipoTriangulo.show();
+            return false;
+        }
+    }
+
     public boolean validar(){
-        boolean retorno=true;
+
+        boolean retorno = true;
+
+        etLadoA.setError(null);
+        etLadoB.setError(null);
+        etLadoC.setError(null);
+        etLadoA.clearFocus();
+        etLadoB.clearFocus();
+        etLadoC.clearFocus();
+
         String ladoA = etLadoA.getText().toString();
         String ladoB = etLadoB.getText().toString();
         String ladoC = etLadoC.getText().toString();
@@ -153,16 +187,21 @@ public class Triangulos extends AppCompatActivity {
             retorno = false;
         }
 
-        if (ladoB.isEmpty()) {
-            etLadoB.setError("Debe ingresar el lado");
-            retorno = false;
+        if (rbIsosceles.isChecked() || rbEscaleno.isChecked()) {
+            if (ladoB.isEmpty()) {
+                etLadoB.setError("Debe ingresar el lado");
+                retorno = false;
+            }
         }
 
-        if (ladoC.isEmpty()) {
-            etLadoC.setError("Debe ingresar el lado");
-            retorno = false;
+        if (rbEscaleno.isChecked()) {
+            if (ladoC.isEmpty()) {
+                etLadoC.setError("Debe ingresar el lado");
+                retorno = false;
+            }
         }
 
         return retorno;
     }
+
 }

@@ -71,7 +71,7 @@ public class MainActivity extends AppCompatActivity {
                     startActivity(btnSiguiente);
 
                 }else if(Validar()){
-                    Toast.makeText(MainActivity.this, "Debe seleccionar un tipo de cálculo", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Debe seleccionar un tipo de cálculo", Toast.LENGTH_LONG).show();
                 }
 
 

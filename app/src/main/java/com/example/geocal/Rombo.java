@@ -25,21 +25,17 @@ public class Rombo extends AppCompatActivity {
 
         //Botones
         btnVolver  = (Button)findViewById(R.id.btnVolver);
-        btnVolver  = (Button)findViewById(R.id.btnVolver);
         btnCalcular  = (Button)findViewById(R.id.btnCalcular);
-        //Variables de numeros para el calculo
 
+        //Variables de numeros para el calculo
         etLadoA = (EditText)findViewById(R.id.etLadoA);
         etLadoB = (EditText)findViewById(R.id.etLadoB);
-
-        //Variable resultado
-        //textViewResultado = (TextView)findViewById(R.id.textViewResultado);
 
         btnCalcular.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if(validar()){
+                if (validar()) {
 
                     Toast.makeText(Rombo.this,"Datos ingresados correctamente",Toast.LENGTH_LONG).show();
 

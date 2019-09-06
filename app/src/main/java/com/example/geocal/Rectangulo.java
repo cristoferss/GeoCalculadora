@@ -44,7 +44,7 @@ public class Rectangulo extends AppCompatActivity {
                     int ladoB = Integer.parseInt(etLadoB.getText().toString());
 
                     int area = ladoA * ladoB;
-                    int perimetro = 2 * (ladoA * ladoB);
+                    int perimetro = 2 * (ladoA + ladoB);
                     double diagonal = Math.sqrt( Math.pow(ladoA, 2) +  Math.pow(ladoB, 2) );
 
                     String resuArea = String.valueOf(area);
@@ -86,7 +86,7 @@ public class Rectangulo extends AppCompatActivity {
         }
 
         if (ladoB.isEmpty()) {
-            etLadoA.setError("Debe ingresar el lado");
+            etLadoB.setError("Debe ingresar el lado");
             retorno = false;
         }
 
