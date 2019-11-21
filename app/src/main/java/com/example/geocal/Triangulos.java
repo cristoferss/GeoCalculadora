@@ -3,6 +3,7 @@ package com.example.geocal;
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -119,6 +120,11 @@ public class Triangulos extends AppCompatActivity {
                             int perimetro = ladoA + ladoB + ladoC;
                             double semiperimetro = perimetro / 2;
                             double area = Math.sqrt(semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC));
+                            //double area = semiperimetro * (semiperimetro - ladoA) * (semiperimetro - ladoB) * (semiperimetro - ladoC);
+                            // 4,5 x (4,5-2) * (4,5-4) * (4,5*3)
+                            // 4,5 x (2,5) * (0,5) * (1,5)
+                            // 8,4375
+                            Log.d("valor area", String.valueOf(area));
 
                             resuArea = String.valueOf(area);
                             resuPerimetro = String.valueOf(perimetro);
